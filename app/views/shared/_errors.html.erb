@@ -1,0 +1,17 @@
+
+<% if obj.errors.any? %>
+
+<div class="ui red message">
+
+<h2 class="panel-title">
+  <%= pluralize(obj.errors.count, "error") %>
+  prohibited this user from being created:
+</h2>
+
+<ul>
+  <% obj.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+</div>
+<% end %>
