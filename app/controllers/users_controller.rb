@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "Welcome to the MessageMe app #{@user.username}"
-      redirect_to root_path(@user)
+      redirect_to chatroom_path(@user)
     else
       render 'new'
     end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def signed_up
     if logged_in?
       flash[:danger] = "You've already signed up for MessageMe"
-      redirect_to root_path
+      redirect_to chatroom_path
     end
 
   end
