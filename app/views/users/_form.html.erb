@@ -1,7 +1,11 @@
+
+
 <div class="ui placeholder segment">
   <div class="ui two column very relaxed stackable grid">
     <div class="column">
       <%= form_for(@user, :html => {class: "ui form", role: "form"}) do |f| %>
+      <%= f.label "Profile Picture" %>
+      <%= f.file_field :avatar %><br>
         <div class="field">
           <%= f.label :username, "Username" %>
           <div class="ui left icon input">

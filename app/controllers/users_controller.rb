@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :signed_up, only: [:new, :create]
-
+  before_action :require_user, only: [:index]
   def new
     @user = User.new
 
@@ -17,9 +17,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :avatar) 
   end
 
   def signed_up
