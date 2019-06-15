@@ -1,5 +1,6 @@
 @import "semantic-ui";
 
+
 .chatbox {
   height: 450px;
 }
@@ -13,4 +14,8 @@
   button{
     display: none;
   }
+}
+
+.pagination {
+  width: 100%;
 }

@@ -2,9 +2,13 @@
 <h1 align="center">All MessageMe Users</h1>
 
 
+<div class="pagination apple_pagination">
+<%= will_paginate %>
+</div>
+<br>
 
 <% @users.each do |user| %>
-<div class="ui special cards">
+<div class="ui special centered cards">
   <div class="card">
     <div class="blurring dimmable image">
       <div class="ui dimmer">
@@ -18,7 +22,6 @@
         <image src="<%=(url_for(user.avatar))%>">
         <% else %>
         <%=  image_tag ("blank-profile-picture-973460_960_720.png") %>
-
         <% end %>
     </div>
     <div class="content">
@@ -36,3 +39,9 @@
 </div>
 <% end %>
 </div>
+<br>
+
+<div class="pagination apple_pagination">
+<%= will_paginate %>
+</div>
+<br>

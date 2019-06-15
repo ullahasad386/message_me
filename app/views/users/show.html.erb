@@ -1,1 +1,25 @@
 <h1 align="center">Welcome to <%= @user.username %>'s page</h1>
+
+<div align="left center">
+  <div class="ui card">
+  <div class="image">
+    <% if @user.avatar.attached? %>
+    <image src="<%=(url_for(@user.avatar))%>">
+    <% else %>
+    <%=  image_tag ("blank-profile-picture-973460_960_720.png") %>
+    <% end %>
+  </div>
+  <div class="content">
+    <p class="header"><%= @user.username %></p>
+    <div class="description">
+      Kristy is an art director living in New York.
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      22 Friends
+    </a>
+  </div>
+</div>
+</div>

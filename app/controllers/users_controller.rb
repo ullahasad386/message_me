@@ -18,16 +18,19 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 5)
   end
 
   def show
     @user = User.find(params[:id])
   end
 
+  def edit
+  end
+
   private
   def user_params
-    params.require(:user).permit(:username, :password, :avatar) 
+    params.require(:user).permit(:username, :password, :avatar)
   end
 
   def signed_up
